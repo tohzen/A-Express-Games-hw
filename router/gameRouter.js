@@ -79,7 +79,7 @@ router.delete("/delete-game/:id", function (req, res) {
   let foundGameIndex = games.findIndex((item) => item.id === req.params.id);
   if (foundGameIndex === -1) {
     res.status(404).json({ message: "Game not found" });
-  } else {
+  } else {   
     games.splice(foundGameIndex, 1);
     res.json({ payload: games });
   }
